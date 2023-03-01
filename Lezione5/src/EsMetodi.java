@@ -8,7 +8,7 @@ public class EsMetodi {
 
     public static int dado() {
         Random numeri = new Random();
-        int risultato = numeri.nextInt(6);
+        int risultato = numeri.nextInt(6) + 1;
         return risultato;
     }
     public static void main(String[] args) {
@@ -22,7 +22,7 @@ public class EsMetodi {
      * @param   n   quanti numeri chiedere
      * @return      true se tutti i numeri chiesti sono pari, altrimenti false
      */
-    /*
+/*
     public static boolean tuttiPari(int n) {
         Scanner tasto = new Scanner(System.in);
         //System.out.println("Quanti numeri vuoi inserire: ");
@@ -31,9 +31,10 @@ public class EsMetodi {
         for(int i=0; i<n; i++) {
             System.out.println("Inserire un numero intero:");
             int num = Integer.parseInt(tasto.nextLine());
-            if(!(num % 2 == 0)) {
-                risp = false;
-            }
+            //if(!(num % 2 == 0)) {
+            //    risp = false;
+            risp = risp && num % 2 == 0;
+            //}
         }
         return risp;
     }
@@ -42,7 +43,7 @@ public class EsMetodi {
         boolean prova = tuttiPari(4);
         System.out.println(prova);
     }
-    */
+*/
     /**
      * metodo soloVocali(String s) che restituisce le vocali della stringa
      * esempio: "Ciao come stai?" -> "iaooeai"
@@ -79,21 +80,20 @@ almeno una delle seguenti condizioni:
 Al termine il programma stampa la somma di tutti i valori inseriti escluso quello ha violato le condizioni.
 Risolvere questo esercizio senza usare array.
 * */
+
     public static int continuaFino() {
         Scanner tasto = new Scanner(System.in);
         //System.out.println("Inserice un numero intero:");
         //int numero = Integer.parseInt(tasto.nextLine());
         int ris = 0;
-        //if (numero % 2 == 0 || numero % 3 == 0) {
-        //    ris = numero;
-            int numeroA;
+        int numeroA;
             do {
                 System.out.println("Inserice un numero intero:");
                 numeroA = Integer.parseInt(tasto.nextLine());
-                if(numeroA % 2 == 0 || numeroA % 3 == 0) {
+                if(numeroA < 0 && numeroA % 2 == 0 || numeroA > 0 && numeroA % 3 == 0) {
                     ris += numeroA;
                 }
-            } while (numeroA % 2 == 0 || numeroA % 3 == 0);
+            } while (numeroA < 0 && numeroA % 2 == 0 || numeroA > 0 && numeroA % 3 == 0);
         return ris;
     }
 
