@@ -37,19 +37,20 @@ public class Bottiglia {
 
     public void riempi(int q) {     //el this no es necesario porque el parametro es distinto del atributo
         if(q<0) {
-            System.out.println("ERRORE");
+            System.out.println("Errore");
         } else {
             quantita += q;
-            if(q>quantita) {
+            if(quantita > capacita) {
                 quantita = capacita;
             }
         }
     }
 
     public void svuota(int q) {
-        quantita -= q;
+        if(q < 0){
+            System.out.println("Errore");
+        }else{
+            quantita = Math.max(0,quantita-q);
+        }
     }
-
 }
-
-
