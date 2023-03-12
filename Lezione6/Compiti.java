@@ -13,7 +13,7 @@ public class Compiti {
     numeri 2 (cifre corrette) e 7 (somma). Si permetta all'utente di provare per 10 volte.
     (per il confronto utilizzare in un ciclo substring oppure charAt)
      */
-
+    /*
     public static void main(String[] args) {
         String codice= "53840";
         boolean tentativo = true;
@@ -55,7 +55,7 @@ public class Compiti {
             }
         }
     }
-
+    */
 
     //ES3 (tutti):
     //Scrivere i seguenti metodi
@@ -84,18 +84,41 @@ public class Compiti {
 
     //tuttoAttaccato: data una stringa restituisce la stringa eliminando gli spazi. Usare substring!
     //Scrivere un main per testare i metodi.
-    /*
+
+    //METODO CON 'REPLACE'
     public static String tuttoAttaccato(String frase) {
         String res;
         res = frase.replace(" ", "");
         return res;
     }
 
+    //METODO CON 'SUBSTRING' (secondo la richiesta)
+    public static String tuttoAttaccato1(String frase1) {
+        String stringParziale = "";
+        String parola = "";
+        int i= 0;
+        int n=0;
+        do {
+                parola = frase1.substring(i, frase1.indexOf(" ", i));
+                stringParziale += parola;
+                n = frase1.indexOf(" ", i);
+                i = n + 1;
+            } while (i <= frase1.lastIndexOf(" "));
+        stringParziale += frase1.substring(frase1.lastIndexOf(" ")+1, frase1.length());
+        return stringParziale;
+    }
+
+
+
     public static void main(String[] args) {
-        String originale = "Ciao mi chiamo Alessandro";
+        String originale = "Mi piace cantare sotto la pioggia";
         String risultato = tuttoAttaccato(originale);
-        System.out.println("La stringa originale e: " + originale);
+        String risultato1 = tuttoAttaccato1(originale);
+        System.out.println("La stringa originale e: " + originale + "\n");
+        System.out.println("Risultato con metodo SUBSTRING:");
+        System.out.println("La stringa senza spazi e: " + risultato1 + "\n");
+        System.out.println("Risultato con metodo REPLACE:");
         System.out.println("La stringa senza spazi e: " + risultato);
     }
-    */
+
 }
