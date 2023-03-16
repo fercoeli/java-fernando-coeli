@@ -36,6 +36,17 @@ public class EsRiscaldamento {
 
     //ESERCIZIO 1 - 2)
     /*
+    //ALTERNATIVA sobre ARGS
+    public static void main(String[] args) {
+        int somma = 0;
+        for(int i=0; i < args.length; i++) {
+            somma += Integer.parseInt(args[i]);
+        }
+        System.out.println(somma);
+    }
+    */
+
+    /*
     public static int somma(int... numeri) {
         Scanner tastiera = new Scanner(System.in);
         int somma = 0;
@@ -51,30 +62,18 @@ public class EsRiscaldamento {
         int risultato = somma(2, 3, 4);
         System.out.println("la somma di tutti i numeri inseriti è: " + risultato);
     }
-
-    //ALT sobre ARGS
-    public static void main(String[] args) {
-        int somma = 0;
-        for(int i=0; i < args.length; i++) {
-            somma += Integer.parseInt(args[i]);
-        }
-        System.out.println(somma);
-    }
-
     */
 
     //ESERCIZIO 2
     //Scrivere un programma che dopo aver chiesto due parole stampi le lettere in comune.
-
     public static String lettereComuni(String parola1, String parola2) {
         //para la primera letra busco si existe en la segunda
         String risultato = "";
         parola1 = parola1.toLowerCase();
         parola2 = parola2.toLowerCase();
         for(int i = 0; i < parola1.length(); i++) {
-            if(parola2.contains(parola1.substring(i,i+1))
-                    && !risultato.contains(parola1.substring(i,i+1))) {
-                risultato += risultato;
+            if(parola2.contains(parola1.substring(i,i+1)) && !risultato.contains(parola1.substring(i,i+1))) {
+                risultato += parola1.substring(i,i+1);
             }
         }
         return risultato;
@@ -84,5 +83,7 @@ public class EsRiscaldamento {
         String stampa = lettereComuni("fernando", "nantes");
         System.out.println("Le lettere in comuni sono: " + stampa);
     }
+
+    //Scrivere un programma che dati due array stampi se sono uguali o no.
 
 }
